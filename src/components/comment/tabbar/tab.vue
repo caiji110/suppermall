@@ -1,9 +1,6 @@
 <template>
-    <div id = 'tab'>
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
-  
+
+     
         <TabBar>
           <TabBaritem path="/home">
             <img
@@ -59,7 +56,7 @@
             <div slot="item-text">我的</div>
           </TabBaritem>
         </TabBar>
-      </div>
+     
 </template>
     
 <script>

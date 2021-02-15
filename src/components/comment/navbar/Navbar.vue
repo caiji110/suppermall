@@ -14,10 +14,12 @@
 <style scoped>
     
     .nav-bar{
+      
         display: flex;
         height: 44px;
         line-height: 44px;
         text-align: center;
+        
     }
     .left{
         width: 60px;  
