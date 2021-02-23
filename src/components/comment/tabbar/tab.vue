@@ -1,6 +1,6 @@
 <template>
 
-     
+      
         <TabBar>
           <TabBaritem path="/home">
             <img

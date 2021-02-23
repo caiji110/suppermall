@@ -1,8 +1,17 @@
 <template>
-    <div></div>
+    <div>
+        <tab></tab>
+    </div>
+    
 </template>
 <script>
-    export default{
-        name:"category"
+
+import tab from '../../components/comment/tabbar/tab'
+
+    export default {
+        name:"category",
+        components: {
+            tab
+        }
     }
 </script>

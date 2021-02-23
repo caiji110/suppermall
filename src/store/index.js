@@ -5,12 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    title:'pop'
+    title:'pop',
+   
   },
   mutations: {
     change(state,palyload){
       state.title = palyload.title
-    }
+    },
   },
   actions: {
   },

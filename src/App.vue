@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <keep-alive include="">
+    <keep-alive exclude='detail'>
       <router-view ></router-view>
     </keep-alive>
-    
-   <tab></tab>
+ 
+   
+   
   
   </div>
 </template>
 
 <script>
- import tab from './components/comment/tabbar/tab.vue'
+
  
 export default {
   name: "App",
   components: {
-   tab ,
+ 
   },
 };
 </script>
@@ -23,4 +24,5 @@ export default {
 
 <style>
   @import "./assets/css/base.css";
+   
 </style>

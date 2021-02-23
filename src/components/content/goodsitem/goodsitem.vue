@@ -1,9 +1,7 @@
 <template>
-    <div class="goods-item">
-     
-         <a :href="goodsitem.link">
-             <img :src="goodsitem.show.img" alt="">
-         </a>
+    <div class="goods-item" @click = 'detailclick'>
+        
+             <img :src="goodsitem.show.img" @load= 'imgload' alt="">
          <div class="goods-info">
             <p>{{goodsitem.title}}</p>
             <span class="price">{{goodsitem.price}}</span>
@@ -12,13 +10,27 @@
     </div>
 </template>
 <script>
-    export default{
+    export default {
         name:"goodsitem",
         props: {
             goodsitem:{
                 type:Object
             }
         },
+        methods: {
+            imgload(){
+                this.$bus.$emit('imgload')
+            },
+            detailclick(){
+           this.$router.push({
+            path:"/detail",
+            query:{iid:this.goodsitem.iid}
+           })
+         }
+        },
+      
+     
+        
     }
 </script>
 <style scoped>

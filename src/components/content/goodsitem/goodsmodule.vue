@@ -1,11 +1,16 @@
 <template>
     <div id="goodsmodule">
-     <goodsitem class="items" :goodsitem='item' v-for = '(item,index) in goods' :key="index"></goodsitem>
+     <goodsitem class="items" 
+     :goodsitem='item'
+      v-for = '(item,index) in goods' 
+      :key="index"
+      
+      ></goodsitem>
     </div>
 </template>
 <script>
     import goodsitem from './goodsitem.vue'
-    export default{
+    export default {
         name:"goodsmodule",
         components: {
             goodsitem
@@ -15,7 +20,6 @@
                 type:Array
             }
         },
-        
 
     }
 </script>

@@ -36,11 +36,17 @@ const router =  new VueRouter({
       path:"/profild",
       component:() => import('../views/profild/profild.vue'),
       meta:{title:'个人信息'}
+    },
+    {
+      path:'/detail',
+      component:() => import ('../views/detail/detail.vue'),
+      meta: { title:'商品详情' }
     }
    ],
 })
   
 router.beforeEach((to, from, next) => {
+ // console.log(to);
     document.title  = to.matched[0].meta.title
   
     next()

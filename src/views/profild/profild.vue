@@ -1,8 +1,15 @@
 <template>
-   <div></div>
+   <div>
+       <tab></tab>
+   </div>
 </template>
 <script>
-    export default{
-        name:"profild"
+    
+import tab from '../../components/comment/tabbar/tab'
+    export default {
+        name:"profild",
+        components: {
+            tab,
+        }
     }
 </script>

@@ -12,8 +12,7 @@
 </script>
 <style scoped>
   #weekpopular img{
-    width: 100.1vw;
-    height: 65vw;
+   width: 100%;
   
   }
 </style>

@@ -2,7 +2,7 @@
   <swiper>
     <swiper-item v-for="(item, index) in banners" :key="index">
       <a :href="item.link">
-        <img :src="item.image" alt="" />
+        <img :src="item.image" @load = 'swiperimageload' alt="" />
       </a>
     </swiper-item>
   </swiper>
@@ -22,10 +22,27 @@ export default {
       required: true,
     },
   },
+  data () {
+    return {
+      istrue:true
+    }
+  },
   components: {
     Swiper,
     SwiperItem,
   },
+  methods: {
+    swiperimageload(){
+
+      if(this.istrue){
+        this.$emit('swiperimage');
+        this.istrue =false;
+        //因为是轮播图，所以只需要计算一张图片的高度即可
+      }
+     
+    
+    }
+  }
 };
 </script>
 

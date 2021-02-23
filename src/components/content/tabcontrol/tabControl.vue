@@ -17,9 +17,7 @@
                 }
             }
         },
-        created () {
-            console.log('我被创建了');
-        },
+
         data () {
             return {
                 currentindex:0
@@ -28,24 +26,24 @@
         methods: {
             change(index,item){
                 this.currentindex = index;
-                if(item=='流行') item='pop'
-                if(item=='新款') item='new'
-                if(item=='精选') item='sell'
+                this.$emit('tabclick',index,item)
+                if(item=='流行'){item='pop' ,index=0} 
+                if(item=='新款') {item='new',index=1}
+                if(item=='精选'){ item='sell',index=2}
                 this.$store.commit({
                     type:"change",
                     title:item
-                })
-              console.log('我被点击了');
-            }
+                }) }
         }
     }
 </script>
 
 <style scoped>
     #tabControl{
-        margin-top: 10px;
+        padding-top: 10px;
         display: flex;
         text-align: center;
+        padding-bottom: 9px;
     }
     .tabControlitem{
         flex: 1;
