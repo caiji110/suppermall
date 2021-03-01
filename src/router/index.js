@@ -29,12 +29,12 @@ const router =  new VueRouter({
     },
     {
       path:"/shopcart",
-      component:() => import('../views/shopcart/shopcart.vue'),
+      component:() => import('../views/cart/cart.vue'),
       meta:{title:'购物车'}
     },
     {
       path:"/profild",
-      component:() => import('../views/profild/profild.vue'),
+      component:() => import('../views/profile/profile.vue'),
       meta:{title:'个人信息'}
     },
     {

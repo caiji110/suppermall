@@ -18,21 +18,24 @@
       data () {
           return {
               istrue:false,
-              isload:true
+              isload:true,
+              
           }
       },
-      //按道理来说 这里应该去监听图片的加载完成后再去计算滚动的高度。
+      
       created () {
            const a= setInterval(() => {
-                if(this.imageshow){
-                    this.istrue = true
-                }
-            }, 100);
-            if(this.istrue){
-               clearInterval(a)
-            }
+               if(this.imageshow){
+                   this.istrue =true;
+                 // console.log('11');
+               }
+            }, 200);
+            setTimeout(() => {
+                clearInterval(a)
+            }, 601);
             // 防止因为异步操作的原因无法立马传过来值
         },
+        
         methods: {
             showimageload(){
               this.$emit('showload');

@@ -41,6 +41,7 @@
 </template>
 <script>
 import { getmultidata, getgoods } from "../../network/home.js";
+import {debounce} from '../../functiontool/debounce.js'
 
 import NavTab from "../../components/comment/navbar/Navbar.vue";
 import bscroll from "../../components/comment/srcoll/scroll.vue";
@@ -98,12 +99,13 @@ export default {
   },
   mounted() {
     //防止拿不到
-    const refresh = this.debounce(this.$refs.scroll.refresh, 100);
+    const refresh = debounce(this.$refs.scroll.refresh, 100);
     this.$bus.$on("imgload", () => {
+     // console.log('首页');
       refresh();
     });
-  
-    
+    //因为没能在goodsmodule中只让图片加载完最后一张再发射信号，所以得在这里进行防抖
+    //好像并没有效果，因为imgloadi一直被触发
    // this.tabOffsetTop = this.$refs.contentTab.$el.offsetTop;
   },
   methods: {
@@ -138,17 +140,7 @@ export default {
     loadmore() {
       this.getgoodss(this.$store.state.title);
     },
-    debounce(fn, wait) {
-      let timer = null;
-      return function() {
-        let context = this;
-        let args = arguments;
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(() => {
-          fn.apply(context, args);
-        }, wait);
-      };
-    },
+  
     imageload() {
       this.tabOffsetTop  = this.$refs.tabcontrol2.$el.offsetTop
     },
@@ -169,6 +161,7 @@ export default {
 .navtab {
   background-color: palevioletred;
   color: white;
+  font-size: 18px;
 }
 
 #home {

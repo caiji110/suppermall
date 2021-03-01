@@ -46,7 +46,7 @@ export default {
           this.$emit("pullingUp");
         });
       }
-      console.log(this.scroll);
+    //  console.log(this.scroll);
     },
     gototop(x,y) {
       this.scroll.scrollTo(x, y, 800);
@@ -55,7 +55,7 @@ export default {
      this.scroll&&this.scroll.finishPullUp();
     },
     refresh(){
-       console.log('wobeidiaoyongle');
+     //  console.log('wobei');
       this.scroll && this.scroll.refresh && this.scroll.refresh()
     }
   },
